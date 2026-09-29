@@ -1,0 +1,1 @@
+import {lazy,Suspense} from "react";import LoadingScreen from "./components/LoadingScreen";const Scene=lazy(()=>import("./components/SceneView"));export default()=> <Suspense fallback={<LoadingScreen/>}><Scene/></Suspense>;

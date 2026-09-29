@@ -1,0 +1,5 @@
+import {useEffect,useRef,useState} from "react";
+import "@arcgis/core/assets/esri/themes/dark/main.css";
+export default function(){const el=useRef(null);const [open,setOpen]=useState(true);
+useEffect(()=>{let view; (async()=>{const [WebScene,SceneView,Search,Legend,Expand]=await Promise.all([import("@arcgis/core/WebScene.js"),import("@arcgis/core/views/SceneView.js"),import("@arcgis/core/widgets/Search.js"),import("@arcgis/core/widgets/Legend.js"),import("@arcgis/core/widgets/Expand.js")]); const scene=new WebScene.default({portalItem:{id:"730af0f9f4ba4ebcbe0b1fefe2fcbaba"}}); view=new SceneView.default({container:el.current,map:scene}); const search=new Search.default({view}); const legend=new Legend.default({view}); view.ui.add(new Expand.default({view,content:search}),"top-right"); view.ui.add(new Expand.default({view,content:legend}),"bottom-right");})(); return ()=>view&&view.destroy();},[]);
+return <><button className="menu-btn" onClick={()=>setOpen(!open)}>☰</button><aside className={open?'panel open':'panel'}><h2>Scene Controls</h2><p>ArcGIS WebScene</p></aside><div ref={el} className="scene-container"/></>}

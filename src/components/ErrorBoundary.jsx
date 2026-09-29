@@ -1,0 +1,1 @@
+import React from "react";export default class ErrorBoundary extends React.Component{state={e:false};static getDerivedStateFromError(){return {e:true}}render(){return this.state.e?<div>Error loading application</div>:this.props.children;}}

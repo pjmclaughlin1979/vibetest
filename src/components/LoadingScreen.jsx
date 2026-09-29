@@ -1,0 +1,1 @@
+export default function(){return <div className="loading-screen"><div><h1>3D Digital Twin Viewer</h1><div className="spinner"></div><p>Loading map...</p></div></div>}

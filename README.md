@@ -1,2 +1,1 @@
-# vibetest
-test copilot
+Production-ready ArcGIS WebScene viewer for GitHub Pages.
